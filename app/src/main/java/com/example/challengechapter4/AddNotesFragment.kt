@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.example.challengechapter4.databinding.FragmentAddNotesBinding
@@ -42,6 +43,7 @@ class AddNotesFragment : Fragment() {
             var note = binding.editContent.text.toString()
             val newNote = Notes(0, title, note)
             vmNotes.insertNote(newNote)
+            Toast.makeText(context, "Add Notes Success!", Toast.LENGTH_SHORT).show()
         }
     }
 }

@@ -55,6 +55,12 @@ class HomeFragment : Fragment() {
         }
 
         txtLogout.setOnClickListener{
+            var addUser = sharedPref.edit()
+            addUser.putString("username", "")
+            addUser.putString("email", "")
+            addUser.putString("password", "")
+            addUser.apply()
+
             Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_loginFragment)
         }
     }
